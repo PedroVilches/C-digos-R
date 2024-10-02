@@ -1,1 +1,64 @@
+#Ex1
+#a)
+dados <- c(67,68,74,67,68,84,75,80,75,84,75,73,67,74,78,77,75,80,74,77,85,85,68,74,72,73,71,73,71,85,68,84,80,77,78,75,71,72,73,84)
+dados
+summary(dados)
+C <- max(dados)-min(dados)
+C
+var(dados)
+sd(dados)
+CV <- (sd(dados)/mean(dados))*100
+CV 
+#É possível percerber que a maior parte dos resultados estão acima da mediana e que há uma grande amplitude
 
+#b)
+boxplot(dados,main="Passos em cada algoritmo de aprendizado por reforço",ylab="Passos", xlab="dados",col="green2")
+
+#Ex2 
+#a)
+tabela <- data.frame(Xi = c(13,14,15,20,23), fi = c(6,12,15,24,9))
+tabela
+summary(tabela)
+C <- max(tabela)-min(tabela)
+C
+sd(tabela$Xi)
+sd(tabela$fi)
+var(tabela)
+CV <-(sd(tabela)/mean(tabela))*100
+CV 
+#É possível analisar que todos os numeros tem uma frequuencia baixa e que a maior parte dos numeros das variaveis estão acima da mediana
+#b)
+hist(tabela, breaks = 5, col="blue", xlab="", ylab="Frequência", main="Histograma das Idades")
+
+#Ex3 
+clusterizacao <- c(14,15,15,16,14,13,16,17,14,16,15,17,17,15,16,15,14,14,13,15,16,14,15,14,16,14,14,15,16,14,13,14,15,17,16,15,16,14,15,17)
+clusterizacao
+summary(clusterizacao)
+C <- max(clusterizacao)-min(clusterizacao)
+C
+var(clusterizacao)
+sd(clusterizacao)
+CV <- (sd(clusterizacao)/mean(clusterizacao))*100
+CV 
+#É possível perceber que a amediana e a média são iguais e que há uma pequena variação
+#b)
+hist(clusterizacao, breaks = 4, col="red2", xlab="dados", ylab="clusters", main="Histograma de clusterização")
+
+#Ex 4 
+#a)
+estimativa <- c(12,2,8,1,1)
+summary(estimativa)
+#b)
+sum(estimativa)
+12/24*100
+2/24*100
+8/24*100
+1/24*100*2
+pie(estimativa, main="Tipo de técnica de estimativa",labels=c("50%","33.33%","8.33%","8.33%"), col=c(4,3,2,1))
+legend("topleft",fill=c(4,3,2,1), legend=c("Modelo Algoritmo","Julgamento do especialista", "IA","Analise de regressão linear","Modelo probabilitico"))
+#Ex5
+t <- c(1,2,4,8,10,15,23,33,47,60)
+t
+#a)
+barplot(t, main = "Receitas em IA",col=topo.colors(1))
+legend("topright",fill=topo.colors(1),legend=c("quantidade em bilhao"))
