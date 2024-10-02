@@ -1,0 +1,116 @@
+#Ex1
+meninas <- c('Maria','Ana','Sophia','Bianca','Julia','Yasmin','Lara','Giovana','Alice','Catarina','Livia','Lorena')
+meninos <- c('Davi','Miguel','Vicente','Pietro','Cauã','Murilo','Gabriel','Lucca','Lucas','Hugo','João')
+str_length(meninas)
+str_length(meninos)
+#Ex 2 
+#a)
+a = "A criação bem-sucedida de inteligência articiial seria o maior evento na história da humanidade.Infelizmente, pode também ser o último a menos que aprendamos a evitar os riscos"
+str_to_lower(a)
+str_to_upper(a)
+str_to_title(a)
+#b)
+b = "Eu imagino um mundo onde a inteligência artificial nis permitirá ser mais produtivos,viver mais e ter energia limpa"
+str_to_lower(b)
+str_to_upper(b)
+str_to_title(b)
+
+#Ex3 
+#a)
+x <- c("Adulto    ",",Adolescente    ",",Adulto     ", " ,Adulto      "," ,Adolescente ",",Adulto   ",",Adolescente    "," ,Adulto   "," ,Adulto  ")
+str_trim(x)
+#b)
+y <- c('Casado ',',Solteiro',',Solteiro',',Solteiro',',Casado ',',Casado',',Solteiro ',',Casado ',',Solteiro ',',Solteiro')
+str_trim(y)
+
+#Ex4
+#a)
+w <- c('Figura 01: LOGOMARCA DA MELITA','figura 02: A SEDE ESTÁ LOCALIZADA EM MIDEN, NA ALEMANHA','figura 03: FOTO DE MELITA BENTZ','figura 04: A SEDE ESTÁ LOCALIZADA EM MIDEN, NA ALEMANHA','figura 05: DISTRIBUIÇÃO DE INDÚSTRIAS DA MELITA','figura 06: FÁBRICA DE MELITA EM AVARÉ','figura 07: BERNARDO WOLFSON','figura 08: FILTROS AROMAMAX','figura 09: LINHA REGULAR DE CAFÉS MELITTA','figura 10: LINHAS REGIÕES BRASILEIRAS','figura 11: LINHA SABOR DA FAZENDA','figura 12: CAFÉS SOLÚVEIS','figura 13: CAPPUCINOS E CAFÉ COM LEITE')
+str_sub(w, start = 8)
+#b)
+str_sub(w, start = 11)
+
+#5
+#a)
+string1 <- "A Estatística é a "
+string2 <- "tentativa de torturar os"
+string3 <- "números até eles confessarem."
+str_c(string1, string2, string3)
+
+#b)
+string1 <- "além de ser burlável,"
+string2 <- "A Estatística,"
+string3 <- "só é uma Ciência exata" 
+string4 <- "mas não nos resultados práticos. "
+string5 <- "nas fórmulas e nos cálculos,"
+str_c(string2, string2, string3, string5, string4)
+
+#c)
+string1 <- " com estatísticas, "
+string2 <- " dizer a "
+string3 <- "É fácil mentir "
+string4 <- " mas é difícil "
+string5 <- "verdade sem elas"
+str_c(string3, string4, string2, string1, string5)
+#d)
+string1 <- " análise do presente "
+string2 <- " Já a probabilidade, "
+string3 <- " é a projeção de um "
+string4 <- " A Estatística é " 
+string5 <- " futuro "
+string6 <- " a partir de um passado. "
+string7 <- "  a partir da Estatística. "
+str_c(string4, string1, string6, string2, string3, string5, string7)
+#6
+#a)
+string1 <- " não comeste nenhum "
+string2 <- "em média "
+string3 <- " diz que se "
+string4 <- " cada um "
+str_c("Estatística:","a ciência que", string3, "eu comi um frangoe tu", string1, ", teremos comido", string2 , "um frango", string4,".")
+
+#b)
+string1 <- "um microondas e os"
+string2 <- "de um freezer, ambos"
+string3 <- "Se a sua"
+string4 <- "temperatura do corpo normal"
+string5 <- "em média você estará"
+str_c(string3, " cabeça ficar dentro de ", string1, " seus pés dentro ",string2, " por 24h ",string5, " vivo e com a ", string4)
+#Ex7
+c <- data.frame(id.paciente=c(1,2,3,4,5,6,7,8,9),nome.abreviado=c('A.A.M','S.S.G.F','T.I.A','L.O.S.M','Y.Q.W','F.A','T.B.N','J.J.L','M.S.S'),exame.a = c(3.8,3.8,3.9,4,4.4,3.8,3.7,3.6,4),exame.b=c(109.98,109.9,109.89,109.99,110.01,109.95,109.98,109.93,110), exame.c = c(0,1,1,0,1,1,0,0,1))
+d <- data.frame(id.paciente = c(1,4,5,7,8,11,15,25),tipo.remedio = c('A','B','A','B','A','A','B','B'))
+dataset1<-right_join(c,d)
+print(dataset1)
+dataset2 <-inner_join(c,d)
+print(dataset2)
+dataset3<-full_join(c,d)
+print(dataset3)
+#Ex8
+e <- data.frame(produto=c('A','C','D','H','I','J','K','O','Y'),VALOR = c(993801,1829300,833952,775831,59143,1192920,6938018,2927318,393178))
+f <- data.frame(produto=c('B','C','D','E','F','H','I','J','M','N','O','Z'),valor = c(983125,71983,61328,51939,10928810,979192,6019278,352918,178263,64129229,447009,1620129))
+dataset1<-right_join(e,f)
+print(dataset1)
+dataset2 <-inner_join(e,f)
+print(dataset2)
+dataset3<-full_join(e,f)
+print(dataset3)
+#9
+#criação dos datasets
+Student_Profile <- data.frame(VL_FOB = c(91283,8401,1123,23145,1098432,7491),CO_PAIS =c(2,3,4,5,6,10))
+view(Student_Profile)
+
+dataset2 <- data.frame(CO_PAIS = c(1,3,4,5,6,7,8,9),NO_FOB =c("A","B","C","D","E","F","G","H"))
+view(dataset2)
+
+#a
+a <- left_join(Student_Profile,dataset2)
+print(a)
+#b
+b <- right_join(Student_Profile,dataset2)
+print(b)
+#c
+c <- inner_join(Student_Profile,dataset2)
+print(c)
+#d
+d <- full_join(Student_Profile,dataset2)
+print(d)
