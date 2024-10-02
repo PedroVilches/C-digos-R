@@ -1,0 +1,25 @@
+#1
+getwd()
+Dados1 <- read.xlsx("AC.xlsx")
+Dados1
+
+#2
+mediaAlturaOeste<- Dados1 %>% filter(Conferência=="Oeste") %>% group_by(Nome.do.Jogador) %>%summarise(mean(`Altura.(cm)`))
+mediaAlturaOeste
+x <- Dados1 %>% mutate (ProjecaoIdade = Idade+2)
+x
+y <- Dados1 %>% select(Assistências.por.Jogo,Rebotes.por.Jogo,`Eficiência.(%)`)
+y
+
+#3
+Dados2 <- tibble(Dados1)
+Dados2
+Dados3 <- Dados2%>%gather(key=Time,value=`Eficiência.(%)`,Nome.do.Jogador)
+Dados3
+Dados4 <- Dados2 %>% spread(key = `Peso.(kg)`, value = `Altura.(cm)`)
+Dados4
+Dados5 <- Dados2 %>%rename(País = 'Nacionalidade')
+Dados5
+dados_separate <- Dados2 %>% gather(Nome.do.Jogador,Time,Posição) %>% separate(col = Nome.do.Jogador, into = c("Val","Nome do time"))
+dados_separate
+dados_separate %>% unite(col = Ano,`Val`,`Nome do time`,sep = "-")
